@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Budget Planning - Budget Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .budget-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .budget-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .budget-card h3 {
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .budget-card .amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .category-budget {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        .category-header h4 {
+            color: #667eea;
+            margin: 0;
+        }
+        .category-header .cat-label {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .category-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+        .budget-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .budget-info strong {
+            color: #333;
+        }
+        .budget-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .budget-controls button {
+            flex: 1;
+            padding: 0.6rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .btn-edit {
+            background: #f0f0f0;
+            color: #333;
+        }
+        .btn-edit:hover { background: #e0e0e0; }
+        .btn-delete {
+            background: #ffebee;
+            color: #c33;
+        }
+        .btn-delete:hover { background: #ffcccc; }
+        .add-budget-form {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #f093fb;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+        .form-row .form-group label {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">💰 Budget Planning Website</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="budget.html" class="active">Budget</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="login-btn" onclick="openModal()">Login</button>
+        </nav>
+    </header>
+
+    <main class="container" style="margin-top:100px;">
+        <h1 class="section-title">Budget Planning</h1>
+
+        <section class="objective-card" style="margin-bottom:1.5rem;">
+            <h3>Select Person</h3>
+            <div style="display:flex; gap:1rem; align-items:center;">
+                <select id="personSelector" style="flex:1; padding:0.7rem; border:1px solid #ddd; border-radius:6px;">
+                    <option value="">-- Select a Person --</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="personDetailsSection" class="objective-card" style="margin-bottom:1.5rem; display:none;">
+            <h3>Person Details</h3>
+            <div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap:1rem;">
+                <div style="background:#f0f0f0; padding:1rem; border-radius:8px;">
+                    <div style="color:#666; font-size:0.9rem;">Person Name</div>
+                    <div id="detailName" style="font-weight:bold; font-size:1.2rem; margin-top:0.3rem;">-</div>
+                </div>
+                <div style="background:#f0f0f0; padding:1rem; border-radius:8px;">
+                    <div style="color:#666; font-size:0.9rem;">Role</div>
+                    <div id="detailRole" style="font-weight:bold; font-size:1.2rem; margin-top:0.3rem;">-</div>
+                </div>
+                <div style="background:#f0f0f0; padding:1rem; border-radius:8px;">
+                    <div style="color:#666; font-size:0.9rem;">Total Transactions</div>
+                    <div id="detailTxCount" style="font-weight:bold; font-size:1.2rem; margin-top:0.3rem;">0</div>
+                </div>
+                <div style="background:#ffebee; padding:1rem; border-radius:8px;">
+                    <div style="color:#666; font-size:0.9rem;">Total Expense</div>
+                    <div id="detailExpense" style="font-weight:bold; font-size:1.2rem; margin-top:0.3rem; color:#f5576c;">₹0</div>
+                </div>
+                <div style="background:#e8f5e9; padding:1rem; border-radius:8px;">
+                    <div style="color:#666; font-size:0.9rem;">Total Income</div>
+                    <div id="detailIncome" style="font-weight:bold; font-size:1.2rem; margin-top:0.3rem; color:#4CAF50;">₹0</div>
+                </div>
+                <div style="background:#f0f0f0; padding:1rem; border-radius:8px;">
+                    <div style="color:#666; font-size:0.9rem;">Net Balance</div>
+                    <div id="detailBalance" style="font-weight:bold; font-size:1.2rem; margin-top:0.3rem;">₹0</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="budget.js"></script>
+</body>
+</html>

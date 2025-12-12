@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Budget Planning Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">💰 Budget Planning Website</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html" class="active">Features</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="login-btn" onclick="openModal()">Login</button>
+        </nav>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Login to Your Account</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group" id="nameGroup" style="display: none;">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">Login</button>
+                </form>
+                <div class="toggle-form">
+                    <p id="toggleText">Don't have an account? <a href="#" onclick="toggleForm(); return false;">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Powerful Features</h1>
+            <p>Everything you need to manage your budget effectively</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Expense Tracker</h3>
+                    <p>Track daily household expenses and hostel costs with easy categorization for groceries, utilities, food, and more. Get instant insights into your spending patterns.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Savings Goals</h3>
+                    <p>Set and monitor savings targets for special occasions, emergencies, or future plans with visual progress tracking. Stay motivated to save more.</p>
+                </div>
+                <div class="feature-card highlight-feature">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Payment Alarm System</h3>
+                    <p>Never miss a payment deadline! Get timely reminders for bills, rent, EMIs, and other important payments. Set custom alerts for recurring expenses.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Visual Reports</h3>
+                    <p>Beautiful charts and graphs help you understand spending patterns and make better financial decisions. See where your money goes at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Responsive</h3>
+                    <p>Access your budget planner anywhere, anytime on any device — desktop, tablet, or smartphone. Your data syncs across all devices.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Smart Insights</h3>
+                    <p>Receive personalized tips and recommendations to optimize your spending and save more based on your spending patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Account</h3>
+                    <p>Sign up in seconds with just your email. It's completely free to start managing your budget.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Set Your Budget</h3>
+                    <p>Define your monthly income and set spending limits for different expense categories.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Track Expenses</h3>
+                    <p>Add your expenses on the go. Takes just a few seconds per entry with smart categorization.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Save More</h3>
+                    <p>Watch your savings grow as you make smarter financial decisions based on insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Managing Your Budget?</h2>
+            <p>Join thousands of homemakers and students who are already managing their money better.</p>
+            <button class="btn btn-primary" style="margin-top: 1.5rem;">Get Started Today</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Budget Planning Website | ABESEC Ghaziabad</p>
+            <p class="footer-credits">Developed by Naincy Sunilkumar Maurya & Palak Singh | CSE-23</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Session 2025-26 | Department of Computer Science & Engineering</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="features.html">Features</a> | 
+                <a href="budget.html">Budget</a> | 
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

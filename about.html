@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Budget Planning Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">💰 Budget Planning Website</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="login-btn" onclick="openModal()">Login</button>
+        </nav>
+    </header>
+
+    <!-- Login Modal (same as home) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Login to Your Account</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group" id="nameGroup" style="display: none;">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">Login</button>
+                </form>
+                <div class="toggle-form">
+                    <p id="toggleText">Don't have an account? <a href="#" onclick="toggleForm(); return false;">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About Our Project</h1>
+            <p>Understanding the mission behind Budget Planning Website</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="objectives">
+                <h2 class="section-title">🎯 Project Objectives</h2>
+                <div class="objectives-list">
+                    <div class="objective-card">
+                        <h4>User-Friendly Design</h4>
+                        <p>Develop a simple, intuitive budget planner specifically tailored for homemakers and hostelers who need straightforward financial management.</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>Complete Financial Control</h4>
+                        <p>Enable users to track expenses, set savings goals, and receive payment reminders through an integrated alarm system.</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>Financial Independence</h4>
+                        <p>Promote financial literacy and independence among non-working individuals and students through accessible tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="scope">
+        <div class="container">
+            <h2 class="section-title">🌟 Project Scope</h2>
+            <div class="scope-grid">
+                <div class="scope-item">
+                    <h4>Immediate Users</h4>
+                    <p>Homemakers managing household budgets and hostelers handling monthly allowances</p>
+                </div>
+                <div class="scope-item">
+                    <h4>Extended Users</h4>
+                    <p>Can be adapted for freelancers, retirees, and other user groups needing budget management</p>
+                </div>
+                <div class="scope-item">
+                    <h4>Future Integration</h4>
+                    <p>Potential integration with mobile apps and calendar tools for enhanced functionality</p>
+                </div>
+                <div class="scope-item">
+                    <h4>Scalability</h4>
+                    <p>Built with extensibility in mind to add more features based on user feedback</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">🛠️ Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h4>Frontend</h4>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4>Development Tools</h4>
+                    <ul>
+                        <li>VS Code</li>
+                        <li>GitHub</li>
+                        <li>Google Forms</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4>Testing Devices</h4>
+                    <ul>
+                        <li>Desktop/Laptop</li>
+                        <li>Mobile Devices</li>
+                        <li>Tablets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">👨‍💻 Development Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-icon">👩‍💻</div>
+                    <h3>Naincy Sunilkumar Maurya</h3>
+                    <p>Roll No: 2400320100726</p>
+                    <p>Section: CSE-23</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">👩‍💻</div>
+                    <h3>Palak Singh</h3>
+                    <p>Roll No: 2400320100778</p>
+                    <p>Section: CSE-23</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 1.1rem;"><strong>ABESEC Ghaziabad</strong></p>
+                <p>Department of Computer Science & Engineering</p>
+                <p>Session 2025-26</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Budget Planning Website | ABESEC Ghaziabad</p>
+            <p class="footer-credits">Developed by Naincy Sunilkumar Maurya & Palak Singh | CSE-23</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Session 2025-26 | Department of Computer Science & Engineering</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="features.html">Features</a> | 
+                <a href="budget.html">Budget</a> | 
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

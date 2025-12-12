@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planning Website - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">💰 Budget Planning Website</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="login-btn" onclick="openModal()">Login</button>
+        </nav>
+    </header>
+
+    <!-- Login/Signup Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Login to Your Account</h2>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group" id="nameGroup" style="display: none;">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">Login</button>
+                </form>
+                <div class="toggle-form">
+                    <p id="toggleText">Don't have an account? <a href="#" onclick="toggleForm(); return false;">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Budget Planning Website</h1>
+        <p>Simple. Intuitive. Made for You.</p>
+        <p class="hero-subtitle">A user-friendly budget planner designed specifically for homemakers managing household expenses and hostelers handling monthly allowances</p>
+        <div class="cta-buttons">
+            <button class="btn btn-primary">Start Planning</button>
+            <a href="features.html" class="btn btn-secondary">Explore Features</a>
+        </div>
+    </section>
+
+    <section class="motivation">
+        <div class="container">
+            <div class="problem-section">
+                <h3>⚠️ The Problem We're Solving</h3>
+                <p>Homemakers and hostelers often face challenges in managing limited budgets, tracking expenses, and saving consistently. Most existing financial tools are either too complex or not tailored to their needs, leading to poor financial habits and missed payments.</p>
+            </div>
+
+            <div class="motivation-content">
+                <h3>💝 Our Motivation</h3>
+                <p>This project is inspired by real-life struggles — a mother who frequently battles with managing household expenses and savings, and students living away from home who face the constant challenge of managing expenses, leading to overspending and no savings. This personal experience sparked the idea to create a simple, intuitive budgeting tool that could help not only families but also students living independently and many homemakers across the country.</p>
+                <br>
+                <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Budget Planner?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Expense Tracking</h3>
+                    <p>Track daily expenses with easy categorization</p>
+                </div>
+                <div class="feature-card highlight-feature">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Payment Alarm System</h3>
+                    <p>Never miss a payment deadline!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Savings Goals</h3>
+                    <p>Set and monitor your savings targets</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="features.html" class="btn btn-primary">View All Features</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="target-audience">
+        <div class="container">
+            <h2 class="section-title">Designed Specifically For</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <h3>🏠 Homemakers</h3>
+                    <ul>
+                        <li>Manage household expenses efficiently</li>
+                        <li>Track grocery and utility bills</li>
+                        <li>Plan for family savings goals</li>
+                        <li>Organize daily expenses systematically</li>
+                    </ul>
+                </div>
+                <div class="audience-card">
+                    <h3>🎓 Hostelers & Students</h3>
+                    <ul>
+                        <li>Manage monthly allowances smartly</li>
+                        <li>Track hostel and food expenses</li>
+                        <li>Avoid overspending on non-essentials</li>
+                        <li>Learn financial independence early</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Budget Planning Website | ABESEC Ghaziabad</p>
+            <p class="footer-credits">Developed by Naincy Sunilkumar Maurya & Palak Singh | CSE-23</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Session 2025-26 | Department of Computer Science & Engineering</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="features.html">Features</a> | 
+                <a href="budget.html">Budget</a> | 
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
